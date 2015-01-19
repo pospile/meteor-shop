@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/.unison" />
+      <excludeFolder url="file://$MODULE_DIR$/HelloMETEOR" />
+      <excludeFolder url="file://$MODULE_DIR$/HelloMETEOR/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/blog" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/cloud" />
+      <excludeFolder url="file://$MODULE_DIR$/cloud/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/shop/.meteor" />
+      <excludeFolder url="file://$MODULE_DIR$/weather" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

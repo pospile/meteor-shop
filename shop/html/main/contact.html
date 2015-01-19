@@ -1,0 +1,73 @@
+<template name="contact">
+	<div class="content">
+
+
+        <form class="form-horizontal text-center" role="form">
+				<h4 style="border-bottom: dashed 1px #000000; padding-bottom: 2.5%;"><b>Vašeho názoru si velmi ceníme a pokusíme se odpovědět co nejdříve to bude možné.</b></h4>
+                <p>Na každou zprávu se snažíme odpovědět do dvou pracovních dnů. Vzhledem k velkému množství zpráv jenž dostává Agraelus <b>bohužel není možné
+                odpovědět na každou zprávu</b> ručně. Proto je možné, že vám přijde pouze automaticky vygenerovaná zpráva, ale můžete si být jisti, že Agrael všechny
+                vaše zprávy čte.</p>
+                <br>
+
+				<div class="jumbotron contacter">
+					<div class="container">
+                        <br>
+
+                      <div class="row">
+                          <h3 style="text-align: left; padding-left: 1%;">Formulář:</h3>
+                          <div class="col-sm-6">
+
+
+	                          <div class="panel-body text-left">
+		                          <p class="small">Data která budou odeslána administrátorům:</p>
+		                          <ul class="info">
+			                          <li>Kontaktovat: <select class="selectpicker">
+				                          <option>Kontaktovat: podporu obchodu</option>
+				                          <option>Kontaktovat: podporu pro hry</option>
+				                          <option>Kontaktovat: Agraela</option>
+			                          </select></li>
+			                          <li>Váš nick: <b>{{me}}</b></li>
+			                          <li>Váš email: <b>{{mail}}</b></li>
+			                          <li>Jedinečný token: <b>{{token}}</b></li>
+		                          </ul>
+		                          <div class="alert alert-warning" role="alert">
+			                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                          <span aria-hidden="true">&times;</span>
+			                          </button>
+	                                      Upozornění: Váš jedinečný vygenerovaný token si prosím uložte, může po vás být vyžadován při komunikaci s podporou. (Bude odeslán na váš email)
+		                          </div>
+	                          </div>
+
+
+
+                          </div>
+	                      <div class="col-sm-6">
+
+                              <br>
+
+		                      <div class="form-group">
+			                      <label class="control-label col-sm-2" for="pwd">Zpráva:</label>
+			                      <div class="col-sm-10">
+				                      <textarea style="height: 245px;" required="" class="form-control" id="message" placeholder="Vaše zpráva"></textarea>
+				                      <button type="submit" class="btn btn-success submbtn">Odeslat</button>
+			                      </div>
+		                      </div>
+
+
+
+
+
+
+                          </div>
+                      </div>
+
+						</div>
+
+					</div>
+
+
+		</form>
+
+
+	</div>
+</template>

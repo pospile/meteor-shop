@@ -1,0 +1,21 @@
+<template name="products">
+    <ul class="catCardList">
+      {{#each products}}
+
+
+	      <li class="catCardList">
+		      <div class="catCard"><a href="#"><img src="{{image}}" alt="" class="img-thumbnail"></a>
+			      <div class="lowerCatCard">
+				      <h3>{{product}}</h3>
+				      <div class="startingPrice">Naše cena: <span>{{price}},-</span></div>
+				      <p>{{description}}</p>
+				      <div id="catCardButton" class="prod_button"><a href="#">Do košíku: <span>{{price}},-</span></a></div>
+				      <div id="catCardButton" class="prod_button ided"><a href="#" id="{{id}}" data-toggle="modal" data-target="#gameDetail">Detail produktu</a></div>
+			      </div>
+		      </div>
+	      </li>
+
+
+      {{/each}}
+    </ul>
+</template>

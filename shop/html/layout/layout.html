@@ -1,0 +1,25 @@
+<template name="layout">
+  {{>modal}}
+
+  {{>navbar}}
+
+      <div class="content">
+	      <div class="row">
+		      <div class="col-sm-8">
+
+              {{>yield}}
+
+		      </div>
+
+
+		      <div class="col-sm-4">
+				{{>sidebar}}
+		      </div>
+	      </div>
+
+      </div>
+
+  {{>footer}}
+
+</template>
+

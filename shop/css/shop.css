@@ -1,0 +1,59 @@
+/* CSS declarations go here */
+body
+{
+
+}
+.navbar
+{
+	padding: 0.7%;
+	margin-left: 1%;
+	margin-top: 1%;
+	margin-right: 1%;
+}
+#footer .navbar-default
+{
+	padding: 0.3%;
+}
+.current a
+{
+	color: #18BC9C !important;
+	border: solid 0.5px #18BC9C !important;
+}
+.content
+{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.toRight
+{
+	float: right;
+}
+.navbar-right
+{
+	margin-right: 5%;
+}
+span {
+	color: #c90c12;
+	font-weight: 300;
+}
+.navbar-brand
+{
+	margin-right: 30% !important;
+}
+.info
+{
+	text-align: left;
+	list-style-type: none;
+}
+.contacter
+{
+	padding-top: 0% !important;
+}
+.submbtn
+{
+	margin-top: 3%;
+}
+.products
+{
+	margin-bottom: 10%;
+}
