@@ -19,23 +19,17 @@
 
 
 	                          <div class="panel-body text-left">
-		                          <p class="small">Data která budou odeslána administrátorům:</p>
-		                          <ul class="info">
-			                          <li>Kontaktovat: <select class="selectpicker">
-				                          <option>Kontaktovat: podporu obchodu</option>
-				                          <option>Kontaktovat: podporu pro hry</option>
-				                          <option>Kontaktovat: Agraela</option>
-			                          </select></li>
-			                          <li>Váš nick: <b>{{me}}</b></li>
-			                          <li>Váš email: <b>{{mail}}</b></li>
-			                          <li>Jedinečný token: <b>{{token}}</b></li>
-		                          </ul>
-		                          <div class="alert alert-warning" role="alert">
-			                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				                          <span aria-hidden="true">&times;</span>
-			                          </button>
-	                                      Upozornění: Váš jedinečný vygenerovaný token si prosím uložte, může po vás být vyžadován při komunikaci s podporou. (Bude odeslán na váš email)
+		                          <div class="panel panel-info">
+			                          <div class="panel-body">
+										  <p class="small">Tyto kontaktní údaje budou odeslány:</p>
+				                          <ul class="info">
+					                          <li>Váš nick: <b>{{me}}</b></li>
+					                          <li>Váš email: <b>{{mail}}</b></li>
+					                          <li>Jedinečný token: <b>{{token}}</b></li>
+				                          </ul>
+			                          </div>
 		                          </div>
+
 	                          </div>
 
 
@@ -48,8 +42,8 @@
 		                      <div class="form-group">
 			                      <label class="control-label col-sm-2" for="pwd">Zpráva:</label>
 			                      <div class="col-sm-10">
-				                      <textarea style="height: 245px;" required="" class="form-control" id="message" placeholder="Vaše zpráva"></textarea>
-				                      <button type="submit" class="btn btn-success submbtn">Odeslat</button>
+				                      <textarea required="" class="form-control" id="message" placeholder="Vaše zpráva"></textarea>
+
 			                      </div>
 		                      </div>
 
@@ -59,9 +53,19 @@
 
 
                           </div>
+
+
                       </div>
 
+						<div class="alert alert-warning" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							Upozornění: Váš jedinečný vygenerovaný token si prosím uložte, může po vás být vyžadován při komunikaci s podporou. (Bude odeslán na váš email)
 						</div>
+						<button type="submit" class="btn btn-success submbtn">Odeslat</button>
+
+					</div>
 
 					</div>
 
