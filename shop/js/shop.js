@@ -1,4 +1,5 @@
 Products = new Mongo.Collection('products');
+Alert = new Mongo.Collection('alert');
 
 if (Meteor.isClient)
 {

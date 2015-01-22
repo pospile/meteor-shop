@@ -28,5 +28,5 @@ if (Meteor.isClient) {
 				console.log(Session.get('selectedID'));
 			}
 		}
-	)
+	);
 }
