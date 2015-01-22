@@ -44,13 +44,6 @@ if (Meteor.isClient)
 			document.getElementById("navCART").className = "";
 			document.getElementById("navCONT").className = "current";
 		});
-		this.route('/poregistraci', function(){
-			this.render('regdone');
-			document.getElementById("navHOME").className = "";
-			document.getElementById("navFAVO").className = "";
-			document.getElementById("navCART").className = "";
-			document.getElementById("navCONT").className = "";
-		});
 		this.route('/:404', function(){
 			this.render('404');
 			document.getElementById("navHOME").className = "";
