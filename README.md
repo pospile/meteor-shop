@@ -1,6 +1,18 @@
 # meteor-shop
-Online game store programmed in Meteor.js
-No payment gateway integrated yet (priorite WIP on integrating at least PayPal).
-Utilizing:
-Modern design, simple to use UI, user-accounts, cart, bootstrap, routing and many more!
-This project is not yet finished, please be patient!
+
+Zdrojový kód webového obchodu napsaného ve frameworku Meteor.js
+Vývojář: Vojtěch Pospíchal
+Aktualizace: initial; 1.0.1; 1.0.2; (1.0.3); *1.1.0*
+
+Současná verze: 1.1.0
+
+Funkční systémy:
+    - Uživatelské účty
+    - Zobrazení doporučených her
+    - UI
+    - Router
+WIP:
+    - Zobrazení produktů dle kategorií
+    - Zobrazení produktů dle ceny
+    - Košík
+    - Integrace platební brány
