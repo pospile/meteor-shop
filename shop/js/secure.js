@@ -16,7 +16,13 @@ if (Meteor.isServer) {
 				else
 				{
 					console.log('Pokus o registraci existujícího uživatele.')
+					Alert.insert({tok: token, user: 'false'});
 				}
+			},
+			'add_Item': function (id, tok)
+			{
+				Cart.insert({product: id, user: tok});
+				console.log(Cart.find({user: tok}));
 			}
 		}
 	)

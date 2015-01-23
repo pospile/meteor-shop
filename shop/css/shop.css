@@ -71,4 +71,5 @@ span {
 	box-shadow: 0px 0px 24px -1px #383838;
 	position: fixed;
 	border: 2px solid #18BC9C;
+	z-index: 1045;
 }

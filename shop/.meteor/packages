@@ -10,5 +10,4 @@ insecure
 iron:router
 jquery
 accounts-password
-mrt:honeypot
 mizzao:jquery-ui

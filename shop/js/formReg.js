@@ -10,27 +10,37 @@ if (Meteor.isClient) {
 		return text;
 	}
 
-	function waitForRegister(token)
-	{
-		var log = Alert.find({tok: token}).fetch();
-		if (log == null)
+	function waitForRegister(token) {
+		var log = Alert.findOne({tok: token});
+
+
+		if (log.user == 'false')
 		{
-			console.log(log);
+			clearInterval(interval);
+			console.log('Error: Uživatel již existuje');
+			$('#loader').toggleClass('visible');
+			$('.toast').html('Tento email je již zaregistrován');
+			$('#submitter').disabled = false;
+			$('.toast').stop().fadeIn(400).delay(5000).fadeOut(700);
+			$('#registerModal').modal('show');
 		}
 		else
 		{
-			console.log(log);
 			clearInterval(interval);
-			console.log('Final log: ' + log);
-			setTimeout(function(){redirect();},3000);
+			console.log('Final log: ' + log.user);
+			setTimeout(function(){redirectSuccess();},3000);
 		}
+
+
 	}
 
-	function redirect()
+
+	function redirectSuccess()
 	{
+		$('.toast').html('Registrace dokončena! <a data-toggle="modal" data-target="#loginModal">Přihlásit se!</a>');
 		$('#loader').toggleClass('visible');
-		$('#regDone').show();
 		$('.toast').stop().fadeIn(400).delay(5000).fadeOut(700);
+		$('#loginModal').modal('show');
 	}
 
 	Template.registerform.events
@@ -52,9 +62,7 @@ if (Meteor.isClient) {
 				console.log(pass2);
 
 
-				if (Honeypot.isHuman(form))
-				{
-					Honeypot.removeHoneypotFields(form);
+
 					if(mail == '' || pass == '' || pass2 == '')
 					{
 						ShowError('Žádné pole nesmí být prázdné');
@@ -69,7 +77,7 @@ if (Meteor.isClient) {
 								var tok = generateToken();
 								console.log('Success...');
 								$('#loader').toggleClass('visible');
-								$('#registerModal').hide();
+								$('#registerModal').modal('hide');
 								Meteor.call('create_Acc', mail, pass, tok);
 								Session.set('token', tok);
 								interval = setInterval(function () {waitForRegister(tok)}, 1000);
@@ -86,11 +94,6 @@ if (Meteor.isClient) {
 							e.target.submiter.disabled = false;
 						}
 					}
-				}
-				else
-					{
-					console.log('Error...');
-				}
 			}
 		}
 	);
