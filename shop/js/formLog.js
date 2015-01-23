@@ -8,21 +8,26 @@ if (Meteor.isClient) {
 				e.preventDefault();
 				var mail = e.target.mailID.value;
 				var pass = e.target.passID.value;
-				Meteor.loginWithPassword(mail, pass, function (e)
+
+				try
+				{
+					Meteor.loginWithPassword(mail, pass, function (e)
+					{
+						$('#loginModal').hide();
+						$('#loader').toggleClass('visible');
+
+						setTimeout(function ()
+						{
+							$('#loader').toggleClass('visible');
+							$('.toast').text('Byl jste úspěšně přihlášen');
+							$('.toast').stop().fadeIn(400).delay(1000).fadeOut(300);
+						}, 2000);
+					});
+				}
+				catch (e)
 				{
 					console.log(e);
-					$('#loginModal').hide();
-					$('.toast').text('Přihlašuji...');
-					$('.toast').stop().fadeIn(400).delay(1000).fadeOut(300);
-
-					setTimeout(function (){
-						$('#loader').toggleClass('visible');
-						setTimeout(function (){
-							$('#loader').toggleClass('visible');
-						}, 3000);
-					}, 1500);
-
-				});
+				}
 			}
 		}
 	)
