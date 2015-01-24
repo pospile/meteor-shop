@@ -6,7 +6,7 @@
 	position: fixed;
 	left: 3%;
 	bottom: 8%;
-	z-index: 100;
+	z-index: 1050;
 }
 #loader #circle {
 	display: block;

@@ -2,9 +2,9 @@
 
 Zdrojový kód webového obchodu napsaného ve frameworku Meteor.js
 Vývojář: Vojtěch Pospíchal
-Aktualizace: initial; 1.0.1; 1.0.2; (1.0.3); *1.1.0*
+Aktualizace: initial; 1.0.1; 1.0.2; (1.0.3); 1.1.0; **1.1.4**
 
-Současná verze: 1.1.0
+Současná verze: 1.1.4
 
 Funkční systémy:
     - Uživatelské účty

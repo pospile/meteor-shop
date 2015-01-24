@@ -14,6 +14,7 @@ if (Meteor.isClient) {
 					Meteor.loginWithPassword(mail, pass, function (e)
 					{
 						$('#loginModal').hide();
+						$('.toast').hide();
 						$('#loader').toggleClass('visible');
 
 						setTimeout(function ()
