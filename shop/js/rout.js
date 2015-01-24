@@ -16,6 +16,10 @@ if (Meteor.isClient)
 		});
 		this.route('/cart', function(){
 			this.render('cart');
+			document.getElementById("navHOME").className = "";
+			document.getElementById("navFAVO").className = "";
+			document.getElementById("navCART").className = "current";
+			document.getElementById("navCONT").className = "";
 		});
 		this.route('/contact', function(){
 			this.render('contact');

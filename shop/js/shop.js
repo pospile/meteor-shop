@@ -5,6 +5,7 @@ Alert = new Mongo.Collection('alert');
 if (Meteor.isClient)
 {
 	Session.set('cat', null);
+	Session.set('price', null);
 }
 
 if (Meteor.isServer)

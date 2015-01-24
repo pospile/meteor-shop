@@ -7,13 +7,29 @@ if (Meteor.isClient) {
 			{
 				if(Session.get('cat')  != null )
 				{
-					console.log(Session.get('cat'));
-					var result = Products.find({cat: parseInt(Session.get('cat'))});
-					return result;
+					var check = Session.get('price')
+					if (check != null)
+					{
+						var result = Products.find({cat: parseInt(Session.get('cat'))}, {sort:{price: check}});
+						return result;
+					}
+					else
+					{
+						var result = Products.find({cat: parseInt(Session.get('cat'))});
+						return result;
+					}
 				}
 				else
 				{
-					return Products.find({});
+					var check = Session.get('price');
+					if (check != null)
+					{
+						return Products.find({}, {sort:{price: check}});
+					}
+					else
+					{
+						return Products.find();
+					}
 				}
 			}
 		}
@@ -26,13 +42,11 @@ if (Meteor.isClient) {
 			{
 				if(Session.get('cat')  != null )
 				{
-					console.log(Session.get('cat'));
 					var result = Categories.find({id: parseInt(Session.get('cat'))});
 					return result;
 				}
 				else
 				{
-					console.log(Session.get('cat'));
 					return Categories.find({});
 				}
 			}
@@ -43,13 +57,23 @@ if (Meteor.isClient) {
 		{
 			'click .chooseCat': function(e)
 			{
-				console.log('clicknuto');
 				Session.set('cat', e.target.id);
 				Router.go('shop');
 			},
 			'click .delFiltr': function ()
 			{
 				Session.set('cat', null);
+				Session.set('price', null);
+				Router.go('shop');
+			},
+			'click .expensive': function()
+			{
+				Session.set('price', -1);
+				Router.go('shop');
+			},
+			'click .cheap': function()
+			{
+				Session.set('price', 1);
 				Router.go('shop');
 			}
 		}

@@ -18,20 +18,4 @@ if (Meteor.isClient) {
 
 		}
 	);
-	Template.products.events
-	(
-		{
-			'click .ided': function(e)
-			{
-				var selectID = e.target.id;
-				Session.set('selectedID', selectID);
-				console.log(Session.get('selectedID'));
-			},
-			'click .carted': function(e)
-			{
-				var selectID = e.target.id;
-				Handle_cart(selectID);
-			}
-		}
-	);
 }

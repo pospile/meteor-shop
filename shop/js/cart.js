@@ -50,12 +50,40 @@ if (Meteor.isClient)
 			}
 		}
 	);
+	Template.productDetail.events
+	(
+		{
+			'click .addToCart': function(e)
+			{
+				var selectID = e.target.id;
+				Handle_cart(selectID);
+			}
+		}
+	);
+
 	Template.cart.events
 	(
 		{
 			'click .remover': function() { console.log('Clearing cart'); Meteor.call('clear_Cart', Meteor.userId());}
 		}
-	)
+	);
+
+	Template.products.events
+	(
+		{
+			'click .ided': function(e)
+			{
+				var selectID = e.target.id;
+				Session.set('selectedID', selectID);
+				console.log(Session.get('selectedID'));
+			},
+			'click .carted': function(e)
+			{
+				var selectID = e.target.id;
+				Handle_cart(selectID);
+			}
+		}
+	);
 }
 
 
