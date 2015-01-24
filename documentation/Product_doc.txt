@@ -1,0 +1,8 @@
+Struktura databáze: Product:
+
+                  -product
+                  -id
+                  -image
+                  -price
+                  -description
+

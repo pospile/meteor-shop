@@ -1,9 +1,9 @@
 <template name="cart">
-	<div class="jumbotron">
-		<div class="container text-center">
+	<div class="jumbotron" style="padding: 0 !important; overflow: scroll; max-height: 30%;">
+		<div class="container">
 			<h2>Košík</h2>
-			<p>Váš košík je prázdný. Vložte prosím zboží do košíku.</p>
-			<p><a class="btn btn-primary btn-lg" href="#" role="button">Ke kase </a></p>
+                {{>cartFill}}
+			<p><a class="btn btn-success btn-lg" href="#" role="button">OBJEDNAT </a><a class="btn btn-danger remover" href="#" role="button" style="margin-left: 3%;">Smazat košík</a></p>
 		</div>
 	</div>
 </template>

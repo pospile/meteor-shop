@@ -1,0 +1,28 @@
+<template name="cartFill">
+    <div class="cart" style="text-align: left;">
+		<ul class="cartWrap">
+            {{#each cartItems}}
+	            <li class="items odd">
+		            <div class="infoWrap">
+			            <div class="cartSection">
+				            <img src="{{image}}" alt="" class="itemImg" />
+				            <h3 style="text-align: center;"><b>{{product}}</b></h3>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Cena: <span>{{price}} ,-</span>
+                                </div>
+	                            <div class="col-sm-6">
+                                    Dostupnost: <span>SKLADEM</span>
+	                            </div>
+                            </div>
+			            </div>
+		            </div>
+	            </li>
+            {{/each}}
+		</ul>
+    </div>
+</template>
+
+
+
+
