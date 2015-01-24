@@ -1,4 +1,5 @@
 # meteor-shop
+##agraelus.cz - doména je nyní v provozu s nejnovější verzí tohoto softwaru
 
 Zdrojový kód webového obchodu napsaného ve frameworku Meteor.js
 Vývojář: Vojtěch Pospíchal
