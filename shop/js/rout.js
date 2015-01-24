@@ -10,25 +10,9 @@ if (Meteor.isClient)
 	{
 		this.route('/', function(){
 			this.render('home');
-			try
-			{
-				document.getElementById("navHOME").className = "current";
-				document.getElementById("navFAVO").className = "";
-				document.getElementById("navCART").className = "";
-				document.getElementById("navCONT").className = "";
-			}
-			catch(e)
-			{
-				console.log('Poprvé spuštěno');
-			}
-
 		});
-		this.route('/favorite', function(){
-			this.render('favorite');
-			document.getElementById("navHOME").className = "";
-			document.getElementById("navFAVO").className = "current";
-			document.getElementById("navCART").className = "";
-			document.getElementById("navCONT").className = "";
+		this.route('/shop', function(){
+			this.render('shop');
 		});
 		this.route('/cart', function(){
 			this.render('cart');
@@ -39,20 +23,10 @@ if (Meteor.isClient)
 		});
 		this.route('/contact', function(){
 			this.render('contact');
-			document.getElementById("navHOME").className = "";
-			document.getElementById("navFAVO").className = "";
-			document.getElementById("navCART").className = "";
-			document.getElementById("navCONT").className = "current";
 		});
 		this.route('/:404', function(){
-			this.render('404');
-			document.getElementById("navHOME").className = "";
-			document.getElementById("navFAVO").className = "";
-			document.getElementById("navCART").className = "";
-			document.getElementById("navCONT").className = "";
+			this.render('error404');
 		});
-
-
 
 	});
 

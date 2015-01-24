@@ -2,6 +2,8 @@ Struktura databáze: Product:
 
                   -product
                   -id
+                  -favorite
+                  -category
                   -image
                   -price
                   -description
