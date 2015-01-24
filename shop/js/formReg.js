@@ -20,7 +20,7 @@ if (Meteor.isClient) {
 			console.log('Error: Uživatel již existuje');
 			$('#loader').toggleClass('visible');
 			$('.toast').html('Tento email je již zaregistrován');
-			$('#submitter').disabled = false;
+			$("#submiter").prop('disabled', false);
 			$('.toast').stop().fadeIn(400).delay(5000).fadeOut(700);
 			$('#registerModal').modal('show');
 		}

@@ -11,9 +11,10 @@ if (Meteor.isServer)
 	Meteor.startup(
 		function()
 		{
-			Meteor.users.remove({});
+			//Meteor.users.remove({});
 			Alert.remove({});
 			Products.remove({});
+			Cart.remove({});
 			Products.insert
 			(
 				{

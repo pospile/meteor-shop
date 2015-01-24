@@ -1,5 +1,4 @@
 if (Meteor.isServer) {
-
 	Meteor.methods
 	(
 		{
@@ -19,13 +18,22 @@ if (Meteor.isServer) {
 					Alert.insert({tok: token, user: 'false'});
 				}
 			},
-			'add_Item': function (id, tok)
+			'add_Item': function (id, token)
 			{
-				Cart.insert({product: id, user: tok});
-				console.log(Cart.find({user: tok}));
+				var check = Cart.findOne({product: id, user: token});
+				if (check != null)
+				{
+					console.log('Tento produkt v košíku již je.');
+				}
+				else
+				{
+					Cart.insert({product: id, user: token});
+				}
+			},
+			'clear_Cart': function (token)
+			{
+				Cart.remove({user: token});
 			}
 		}
 	)
-
-
 }
