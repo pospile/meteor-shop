@@ -1,0 +1,27 @@
+<template name="productDetail">
+    <ul class="cartWrap" style="margin-bottom: 10%; border: 1px solid #2C3E50 !important;">
+        {{#each renderProducts}}
+                 <li class="items odd" style="display: inline-block;float: left;width: 50%;">
+	                <div class="infoWrap">
+		                <div class="cartSection">
+			                <img src="{{image}}" alt="" class="itemImg" />
+			                <h3 style="text-align: center;"><b>{{product}}</b></h3>
+			                <div class="row">
+				                <div class="col-sm-6">
+					                Cena: <span>{{price}} ,-</span>
+				                </div>
+				                <div class="col-sm-6">
+					                Dostupnost: <span>SKLADEM</span>
+				                </div>
+			                </div>
+		                </div>
+	                </div>
+                 </li>
+        {{/each}}
+    </ul>
+</template>
+
+
+
+
+

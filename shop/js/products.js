@@ -5,7 +5,7 @@ if (Meteor.isClient) {
 		{
 			'products': function ()
 			{
-				return Products.find();
+				return Products.find({fav: true});
 			},
 			'currentID': function()
 			{

@@ -1,0 +1,27 @@
+<template name="shop">
+    <div class="row">
+        <div class="col-sm-3">
+	        <div class="panel panel-default">
+		        <div class="panel-body">
+                    <h4 class="" style="text-align: left;">Kategorie:</h4>
+			        <ul style="padding: 0px;list-style-type: none;">
+                        {{#each listCat}}
+                            <li style="margin:5%; margin-left: 10%;"><a id="{{id}}" class="btn btn-info btn-xs chooseCat">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+
+                    <div style="border-top: 1px solid #2C3E50; padding: 3%; text-align: center;">
+                        <h4 style="text-align: left;">Cena: </h4>
+			            <a class="btn btn-primary btn-xs">nejdražší </a>  /  <a class="btn btn-default btn-xs"> nejlevnější</a>
+                    </div>
+                    <div style="border-top: 1px solid #2C3E50; padding-top: 3%;">
+	                    <a class="btn btn-danger btn-xs delFiltr">smazat filtr</a><br>
+                    </div>
+		        </div>
+	        </div>
+        </div>
+        <div class="col-sm-9">
+            {{>productDetail}}
+        </div>
+    </div>
+</template>
