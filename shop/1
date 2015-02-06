@@ -1,0 +1,7 @@
+clear
+echo Probiha  automaticky build meteor aplikace. Jakmile bude vse hotovo budete vyzvani k zadani hesla pro upload.
+rm shop.tar.gz
+meteor build .
+scp shop.tar.gz root@178.62.137.215:/home/shop
+clear
+echo Hotovo, nyni prosim prejdete na server a deploynete aplikaci.

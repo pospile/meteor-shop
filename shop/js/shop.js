@@ -6,6 +6,13 @@ if (Meteor.isClient)
 {
 	Session.set('cat', null);
 	Session.set('price', null);
+	setTimeout(
+		function()
+		{
+			console.clear();
+			console.log('Načteno');
+		}, 500
+	)
 }
 
 if (Meteor.isServer)
@@ -18,6 +25,11 @@ if (Meteor.isServer)
 			Cart.remove({});
 			Products.remove({});
 			Categories.remove({});
+			Admin.remove({});
+
+			var admin = Meteor.users.findOne({ emails: { $elemMatch: { address: "reinolde@seznam.cz" } } })._id;
+
+			Admin.insert({id: admin});
 
 			Categories.insert({id: 1, name: 'Střílečky'});
 			Categories.insert({id: 2, name: 'RPG'});

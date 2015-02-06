@@ -1,0 +1,172 @@
+<template name="admin">
+    <div id="securityContainer" style="padding-left: 5%;">
+        <h1>Administrační panel:</h1>
+        <div>
+            <div class="col-sm-8">
+		            <div class="panel panel-primary" style="text-align: right;">
+			            <div class="panel-heading">
+				            <h3 class="panel-title"><h5 style="float: left;">Seznam uživatelů  </h5>   <a class="btn btn-info userExpander" style="margin-left: 5%;">ZOBRAZIT</a></h3>
+			            </div>
+			            <div class="panel-body userExpand" style="display: none; text-align: left;">
+				            <table class="table table-striped table-hover ">
+					            <thead>
+					            <tr>
+						            <th>ID</th>
+						            <th>mail</th>
+					            </tr>
+					            </thead>
+					            <tbody>
+                                {{#each users}}
+						            <tr>
+							            <td>{{_id}}</td>
+							            <td><button>KONTAKTOVAT</button></td>
+						            </tr>
+                                {{/each}}
+					            </tbody>
+				            </table>
+			            </div>
+		            </div>
+            </div>
+            <div class="col-sm-4">
+	            <div class="panel panel-primary" style="text-align: right;">
+		            <div class="panel-heading">
+			            <h3 class="panel-title"><h5 style="float: left;">Seznam objednávek:  </h5>   <a class="btn btn-info orderExpander">ZOBRAZIT</a></h3>
+		            </div>
+		            <div class="panel-body orderExpand" style="display: none; text-align: left;">
+			            Hra: Game Of Thrones <br>
+                        Cena: 500
+		            </div>
+	            </div>
+            </div>
+        </div>
+        <div>
+	        <div class="col-lg-12">
+                    <div class="panel panel-primary" style="text-align: right;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><h5 style="float: left;">Přidat hru  </h5>   <a class="btn btn-info addExpander" style="margin-left: 5%;">ZOBRAZIT</a></h3>
+                        </div>
+                        <div class="panel-body addExpand" style="display: none; text-align: left;">
+
+	                        <div class="form-group">
+		                        <label class="control-label">Jméno hry:</label>
+		                        <div class="input-group">
+			                        <span class="input-group-addon"></span>
+			                        <input class="form-control" type="text" placeholder="Grand Theft Auto">
+		                        </div>
+	                        </div>
+
+                            <br>
+
+	                        <div class="form-group">
+		                        <label class="control-label">Distributor:</label>
+		                        <div class="input-group">
+			                        <span class="input-group-addon"></span>
+			                        <input class="form-control" type="text" placeholder="Rockstar Games">
+		                        </div>
+	                        </div>
+
+                            <br>
+
+                            <div class="form-group">
+                                <label class="control-label">Cena:</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">CZK</span>
+                                    <input class="form-control" type="text" placeholder="599">
+                                </div>
+                            </div>
+
+                            <br>
+
+	                        <div class="form-group">
+		                        <label class="control-label">Náhledový obrázek: (URL/Cesta do složky public)</label>
+		                        <div class="input-group">
+			                        <span class="input-group-addon">../<span class="red">public</span>/</span>
+			                        <input class="form-control" type="text" placeholder="gta_v.png">
+		                        </div>
+	                        </div>
+
+                            <br>
+
+	                        <div class="form-group">
+		                        <label class="control-label">ID / Katalogové číslo (automaticky doplněno)</label>
+		                        <div class="input-group">
+			                        <span class="input-group-addon">#</span>
+			                        <input class="form-control" type="text" value="{{newID}}" disabled="">
+		                        </div>
+	                        </div>
+
+                            <br>
+
+	                        <div class="form-group">
+		                        <label class="control-label">Kategorie hry:</label>
+		                        <div class="input-group" style="width: 100%;">
+			                        <select class="form-control" id="select">
+                                        {{#each listCat}}
+	                                        <option id="{{id}}">{{name}}</option>
+                                        {{/each}}
+			                        </select>
+		                        </div>
+	                        </div>
+
+                            <br>
+
+	                        <div class="form-group">
+		                        <label class="control-label">Popisek hry:</label>
+                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                <span class="help-block">Popis by měl být dlouhý maximálně 150 znaků.</span>
+	                        </div>
+
+                            <br>
+
+                            <a class="btn btn-success" type="submit">SUBMIT</a>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: auto;">
+
+            <div class="col-sm-12">
+
+	            <div class="panel panel-primary" style="text-align: right;">
+		            <div class="panel-heading">
+			            <h3 class="panel-title"><h5 style="float: left;">Seznam her: (Celkem: {{prodCount}} )  </h5>   <a class="btn btn-info listExpander">ZOBRAZIT</a></h3>
+		            </div>
+		            <div class="panel-body listExpand" style="display: none; text-align: left;">
+
+			            <ul class="cartWrap">
+                            {{#each listProducts}}
+                                <hr>
+					            <li class="items odd">
+						            <div class="infoWrap">
+							            <div class="cartSection">
+								            <img src="{{image}}" alt="" class="itemImg" />
+								            <h3 style="text-align: center;"><b>{{product}}</b></h3>
+								            <div class="row">
+									            <div class="col-sm-6">
+										            <b>Cena:</b> <span>{{price}} ,-</span>
+									            </div>
+									            <div class="col-sm-6">
+										            <b>Dostupnost:</b> <span>SKLADEM</span>
+                                                    <br>
+                                                    <hr>
+                                                    <b>Popisek:</b> {{description}}
+									            </div>
+								            </div>
+							            </div>
+						            </div>
+					            </li>
+                            {{/each}}
+			            </ul>
+
+		            </div>
+	            </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</template>

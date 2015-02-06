@@ -11,11 +11,11 @@
 					<li class="" id="navCART">				<a href="/cart">Košík</a></li>
 					<li class="" id="navCONT">				<a href="/contact">Kontakt</a></li>
 					{{#unless currentUser}}<li class="" id="navLOG">				<a href="#" data-toggle="modal" data-target="#loginModal">Přihlášení</a></li>{{/unless}}
+					{{{admin}}}
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class='toast' style='display:none'></div>
 	{{>login}}
 	{{>register}}
 	{{>loader}}
