@@ -13,16 +13,30 @@ if (Meteor.isClient) {
 				{
 					Meteor.loginWithPassword(mail, pass, function (e)
 					{
-						$('#loginModal').hide();
-						$('.toast').hide();
-						$('#loader').toggleClass('visible');
-
-						setTimeout(function ()
+						if (e == null)
 						{
+							$('#loginModal').modal('hide');
+							$('.notification').hide();
 							$('#loader').toggleClass('visible');
-							$('.toast').text('Byl jste úspěšně přihlášen');
-							$('.toast').stop().fadeIn(400).delay(1000).fadeOut(300);
-						}, 2000);
+
+							setTimeout(function ()
+							{
+								$('#loader').toggleClass('visible');
+								showToast("true", "Byl jste úspěšně přihlášen jako: <b class='red'>" + Meteor.user().emails[0].address + "</b>");
+							}, 2000);
+						}
+						else
+						{
+							$('#loginModal').modal('hide');
+							$('.notification').hide();
+							$('#loader').toggleClass('visible');
+
+							setTimeout(function ()
+							{
+								$('#loader').toggleClass('visible');
+								showToast("true", "CHYBA: Špatný EMAIL nebo HESLO");
+							}, 2000);
+						}
 					});
 				}
 				catch (e)

@@ -19,9 +19,8 @@ if (Meteor.isClient) {
 			clearInterval(interval);
 			console.log('Error: Uživatel již existuje');
 			$('#loader').toggleClass('visible');
-			$('.toast').html('Tento email je již zaregistrován');
+			showToast("true", "CHYBA: Tento email je již zaregistrován");
 			$("#submiter").prop('disabled', false);
-			$('.toast').stop().fadeIn(400).delay(5000).fadeOut(700);
 			$('#registerModal').modal('show');
 		}
 		else
@@ -37,9 +36,8 @@ if (Meteor.isClient) {
 
 	function redirectSuccess()
 	{
-		$('.toast').html('Registrace dokončena! <a data-toggle="modal" data-target="#loginModal">Přihlásit se!</a>');
+		showToast("true", "Registrace dokončena! <a data-toggle='modal' data-target='#loginModal'>Přihlásit se!</a>");
 		$('#loader').toggleClass('visible');
-		$('.toast').stop().fadeIn(400).delay(5000).fadeOut(700);
 		$('#loginModal').modal('show');
 	}
 

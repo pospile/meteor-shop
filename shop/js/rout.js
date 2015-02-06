@@ -6,6 +6,7 @@ if (Meteor.isClient)
 			layoutTemplate: 'layout'
 		}
 	);
+
 	Router.map(function()
 	{
 		this.route('/', function(){
@@ -23,6 +24,20 @@ if (Meteor.isClient)
 		});
 		this.route('/contact', function(){
 			this.render('contact');
+		});
+		this.route('/admin', function(){
+			if(Meteor.userId() == Admin.findOne({}).id)
+			{
+				showToast("true", "Vítejte administrátore");
+				this.render('admin');
+			}
+			else
+			{
+				Router.go('/');
+			}
+		});
+		this.route('/user/:id', function(){
+			this.render('useracc');
 		});
 		this.route('/:404', function(){
 			this.render('error404');

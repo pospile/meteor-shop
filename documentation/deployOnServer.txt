@@ -1,0 +1,8 @@
+Manuální postup na: https://www.digitalocean.com/community/tutorials/how-to-deploy-a-meteor-js-application-on-ubuntu-14-04-with-nginx
+Podle tohoto postupu byl nastaven a uveden do chodu kompletní server.
+
+Postup deploymentu na server pomocí Reinolde Inc. automatizace:
+
+            1. Spustit na vývojářském buildu soubor 1 - code:'sh 1'
+            2. Zadat heslo ve chvíli kdy bude vyžádáno.
+            3. Spustit na rootu serveru soubor 1 - code:'sh 1'
