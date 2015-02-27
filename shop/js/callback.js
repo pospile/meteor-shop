@@ -8,7 +8,10 @@ if (Meteor.isClient) {
 		document.getElementById("navFAVO").className = "";
 		document.getElementById("navCART").className = "";
 		document.getElementById("navCONT").className = "";
-		document.getElementById("navADM").className = "";
+		if(Meteor.userId() == Admin.findOne({}).id)
+		{
+			document.getElementById("navADM").className = "";
+		}
 	}
 	Template.shop.rendered = function ()
 	{

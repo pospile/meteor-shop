@@ -75,5 +75,17 @@ span {
 }
 .red
 {
-	color: red;
+	color: blue;
+}
+.floated
+{
+	float: left;
+	width: 30%;
+	opacity: 1;
+	position: fixed;
+	z-index: 1021;
+	display: none;
+	left: 35%;
+	bottom: 10%;
+	text-align: center;
 }

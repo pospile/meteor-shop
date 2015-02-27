@@ -33,6 +33,49 @@ if (Meteor.isServer) {
 			'clear_Cart': function (token)
 			{
 				Cart.remove({user: token});
+			},
+			'remove_Product': function (token, receivedID)
+			{
+				if (token == Admin.findOne({}).id)
+				{
+					console.log('Mažu produkt: ' + parseInt(receivedID));
+					Products.remove({id: parseInt(receivedID)});
+				}
+				else
+				{
+					console.log('Pokus o nabourání do systému!' + token);
+				}
+			},
+			'add_Product': function(token, nameREC, idREC, catREC, imageREC, priceREC, descriptionREC)
+			{
+				if (token == Admin.findOne({}).id)
+				{
+					try
+					{
+						console.log('Vkládám do systému hru: ' + nameREC + ' with id: ' + idREC);
+						console.log(token + ' / ' + nameREC +' '+ idREC + ' / ' + catREC + ' / ' + imageREC + ' / ' + priceREC + ' / ' + descriptionREC);
+						Products.insert
+						(
+							{
+								product: nameREC,
+								id: idREC,
+								fav: false,
+								cat: catREC,
+								image: imageREC,
+								price: priceREC,
+								description: descriptionREC
+							}
+						);
+					}
+					catch (e)
+					{
+						console.log(e);
+					}
+				}
+				else
+				{
+					console.log('Pokus o nabourání do systému!' + token);
+				}
 			}
 		}
 	)

@@ -46,7 +46,6 @@ if (Meteor.isClient) {
 		{
 			'submit form': function(e)
 			{
-				var form = this;
 				e.preventDefault();
 				e.target.submiter.disabled = true;
 

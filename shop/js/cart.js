@@ -44,6 +44,7 @@ if (Meteor.isClient)
 					element.image           = find.image;
 					element.price           = find.price;
 					element.description     = find.description;
+
 					finalized.push(element);
 				}
 				return finalized;
